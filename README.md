@@ -47,11 +47,16 @@
 
 ```
 style-guides/
-├── README.md              # This index
+├── README.md                    # This index
 ├── neo-brutalist/
-│   └── README.md          # Full guide
+│   ├── README.md                # Full documentation (human-readable)
+│   ├── PROMPT.md                # AI-optimized prompt (token-efficient)
+│   └── assets/
+│       └── example-*.png        # Example images
 └── [future-style]/
-    └── README.md
+    ├── README.md
+    ├── PROMPT.md
+    └── assets/
 ```
 
 ---
