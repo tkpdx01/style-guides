@@ -4,6 +4,12 @@
 
 ---
 
+## Examples
+
+![Neo-Brutalist Example - hapi.run](./assets/example-1.png)
+
+---
+
 ## Table of Contents
 
 - [1. Overview](#1-overview)
