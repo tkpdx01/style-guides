@@ -1,44 +1,63 @@
 # Style Guides
 
-A collection of frontend style guides for AI-assisted development.
+> Frontend style guides for AI-assisted development.
 
 ---
 
-## Available Styles
+## Styles Index
 
-| Style | Description | Use Case |
-|-------|-------------|----------|
-| [Neo-Brutalist](./neo-brutalist/) | Warm, handcrafted design with hard shadows and bold borders | Landing pages, SaaS, Creative sites |
+| ID | Name | Path | Tags | Best For |
+|----|------|------|------|----------|
+| `neo-brutalist` | Neo-Brutalist | [neo-brutalist/README.md](./neo-brutalist/README.md) | `warm`, `handcrafted`, `hard-shadows`, `bold-borders`, `playful` | Landing pages, SaaS, Creative portfolios |
+
+---
+
+## Quick Reference
+
+### neo-brutalist
+
+<a href="./neo-brutalist/README.md"><img src="./neo-brutalist/assets/example-1.png" width="400" alt="Neo-Brutalist Example"></a>
+
+**Visual:** Hard shadows, bold dark borders, warm creamy backgrounds, rounded typography
+
+**Stack:** Tailwind CSS, Framer Motion, Radix UI, Nunito + Space Mono
+
+**Key Classes:**
+- `shadow-hard` / `shadow-hard-lg` - Solid offset shadows
+- `hover-lift` - Interactive lift on hover
+- `border-2 border-border` - Bold dark borders
+- `rounded-xl` / `rounded-2xl` - Large border radius
+
+**Colors:**
+- Primary: `hsl(24 90% 50%)` (Orange)
+- Background: `hsl(45 40% 96%)` (Cream)
+- Border: `hsl(30 20% 15%)` (Near-black)
 
 ---
 
 ## Usage
 
-Each style guide is a self-contained markdown document that can be:
+```
+"Apply the neo-brutalist style from style-guides/neo-brutalist/README.md"
+```
 
-1. **Referenced by AI assistants** - Feed the guide to Claude, GPT, or other LLMs for consistent styling
-2. **Used as a skill/command** - Add to your AI coding tool's custom commands
-3. **Documentation** - Reference for design decisions and implementation details
+---
 
 ## Structure
 
 ```
 style-guides/
-├── README.md                 # This file (index)
-├── neo-brutalist/           # Neo-Brutalist style
-│   └── README.md            # Full style guide
-├── [future-style]/          # More styles coming...
-│   └── README.md
+├── README.md              # This index
+├── neo-brutalist/
+│   └── README.md          # Full guide
+└── [future-style]/
+    └── README.md
 ```
-
-## Contributing
-
-To add a new style guide:
-
-1. Create a new directory with the style name
-2. Add a `README.md` with the full guide
-3. Include: Tech stack, CSS variables, Tailwind config, utility classes, common patterns
 
 ---
 
-*Built for AI-assisted frontend development*
+## Adding New Styles
+
+1. Create directory: `style-name/`
+2. Add `README.md` with: Tech stack, CSS variables, Tailwind config, utility classes, common patterns
+3. Update this index
