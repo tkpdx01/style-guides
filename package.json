@@ -1,0 +1,22 @@
+{
+  "name": "style-guides",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A curated, framework-agnostic frontend style library for humans and AI agents.",
+  "scripts": {
+    "catalog:build": "node scripts/catalog.mjs",
+    "catalog:check": "node scripts/catalog.mjs --check",
+    "themes:check": "node scripts/check-themes.mjs",
+    "links:check": "node scripts/check-links.mjs",
+    "check": "npm run catalog:check && npm run themes:check && npm run links:check"
+  },
+  "exports": {
+    "./core.css": "./src/core.css",
+    "./themes/*.css": "./styles/*/theme.css",
+    "./catalog.json": "./catalog.json"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

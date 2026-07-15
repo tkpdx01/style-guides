@@ -1,0 +1,64 @@
+@layer sg.theme {
+  [data-style="neo-brutalist"] {
+    color-scheme: light;
+
+    --sg-color-primary: hsl(8 75% 56%);
+    --sg-color-primary-foreground: hsl(45 40% 98%);
+    --sg-color-secondary: hsl(145 52% 82%);
+    --sg-color-secondary-foreground: hsl(150 35% 18%);
+    --sg-color-background: hsl(45 40% 96%);
+    --sg-color-foreground: hsl(30 20% 9%);
+    --sg-color-surface: hsl(0 0% 100%);
+    --sg-color-surface-foreground: hsl(30 20% 9%);
+    --sg-color-muted: hsl(42 18% 90%);
+    --sg-color-muted-foreground: hsl(30 12% 35%);
+    --sg-color-accent: hsl(48 100% 50%);
+    --sg-color-border: hsl(30 20% 9%);
+    --sg-color-focus: hsl(218 85% 52%);
+    --sg-color-danger: hsl(0 76% 52%);
+
+    --sg-font-sans: "Nunito", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --sg-font-mono: "Space Mono", ui-monospace, SFMono-Regular, Consolas, monospace;
+
+    --sg-border-width: 2px;
+    --sg-focus-width: 3px;
+    --sg-focus-offset: 3px;
+    --sg-radius-control: 0.85rem;
+    --sg-radius-surface: 1.25rem;
+    --sg-radius-pill: 999px;
+    --sg-space-card: clamp(1.25rem, 2vw, 2rem);
+
+    --sg-shadow-sm: 2px 2px 0 0 var(--sg-color-border);
+    --sg-shadow-md: 4px 4px 0 0 var(--sg-color-border);
+    --sg-shadow-lg: 8px 8px 0 0 var(--sg-color-border);
+    --sg-shadow-control: var(--sg-shadow-md);
+    --sg-shadow-surface: var(--sg-shadow-md);
+    --sg-shadow-input: var(--sg-shadow-sm);
+    --sg-shadow-badge: var(--sg-shadow-sm);
+    --sg-shadow-hover: 6px 6px 0 0 var(--sg-color-border);
+    --sg-shadow-active: 1px 1px 0 0 var(--sg-color-border);
+
+    --sg-transform-hover: translate(-2px, -2px);
+    --sg-transform-active: translate(2px, 2px);
+    --sg-motion-duration: 180ms;
+    --sg-motion-easing: cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  [data-style="neo-brutalist"][data-color-scheme="dark"] {
+    color-scheme: dark;
+
+    --sg-color-primary: hsl(145 70% 45%);
+    --sg-color-primary-foreground: hsl(145 30% 9%);
+    --sg-color-secondary: hsl(260 20% 20%);
+    --sg-color-secondary-foreground: hsl(260 10% 92%);
+    --sg-color-background: hsl(260 30% 8%);
+    --sg-color-foreground: hsl(260 10% 92%);
+    --sg-color-surface: hsl(260 28% 11%);
+    --sg-color-surface-foreground: hsl(260 10% 92%);
+    --sg-color-muted: hsl(260 20% 15%);
+    --sg-color-muted-foreground: hsl(260 12% 68%);
+    --sg-color-accent: hsl(48 92% 55%);
+    --sg-color-border: hsl(260 10% 78%);
+    --sg-color-focus: hsl(145 70% 55%);
+  }
+}

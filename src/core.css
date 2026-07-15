@@ -1,0 +1,166 @@
+@layer sg.reset, sg.theme, sg.components, sg.utilities;
+
+@layer sg.reset {
+  :where([data-style]) {
+    background: var(--sg-color-background);
+    color: var(--sg-color-foreground);
+    font-family: var(--sg-font-sans);
+    line-height: 1.5;
+    text-rendering: optimizeLegibility;
+  }
+
+  :where([data-style]),
+  :where([data-style]) *,
+  :where([data-style]) *::before,
+  :where([data-style]) *::after {
+    box-sizing: border-box;
+  }
+
+  :where([data-style]) :focus-visible {
+    outline: var(--sg-focus-width, 3px) solid var(--sg-color-focus);
+    outline-offset: var(--sg-focus-offset, 3px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    :where([data-style]) *,
+    :where([data-style]) *::before,
+    :where([data-style]) *::after {
+      scroll-behavior: auto !important;
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+    }
+  }
+}
+
+@layer sg.components {
+  :where([data-style]) .sg-button,
+  :where([data-style]) .sg-card,
+  :where([data-style]) .sg-input,
+  :where([data-style]) .sg-badge {
+    border-color: var(--sg-color-border);
+    border-style: solid;
+    border-width: var(--sg-border-width);
+  }
+
+  :where([data-style]) .sg-button {
+    display: inline-flex;
+    min-height: 2.75rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.15rem;
+    border-radius: var(--sg-radius-control);
+    box-shadow: var(--sg-shadow-control);
+    font: inherit;
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+      transform var(--sg-motion-duration) var(--sg-motion-easing),
+      box-shadow var(--sg-motion-duration) var(--sg-motion-easing),
+      background-color var(--sg-motion-duration) var(--sg-motion-easing);
+  }
+
+  :where([data-style]) .sg-button:hover:not(:disabled) {
+    box-shadow: var(--sg-shadow-hover);
+    transform: var(--sg-transform-hover);
+  }
+
+  :where([data-style]) .sg-button:active:not(:disabled) {
+    box-shadow: var(--sg-shadow-active);
+    transform: var(--sg-transform-active);
+  }
+
+  :where([data-style]) .sg-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+  }
+
+  :where([data-style]) .sg-button--primary {
+    background: var(--sg-color-primary);
+    color: var(--sg-color-primary-foreground);
+  }
+
+  :where([data-style]) .sg-button--secondary {
+    background: var(--sg-color-secondary);
+    color: var(--sg-color-secondary-foreground);
+  }
+
+  :where([data-style]) .sg-button--ghost {
+    background: var(--sg-color-surface);
+    color: var(--sg-color-foreground);
+  }
+
+  :where([data-style]) .sg-card {
+    padding: var(--sg-space-card);
+    border-radius: var(--sg-radius-surface);
+    background: var(--sg-color-surface);
+    color: var(--sg-color-surface-foreground);
+    box-shadow: var(--sg-shadow-surface);
+  }
+
+  :where([data-style]) .sg-input {
+    width: 100%;
+    min-height: 2.75rem;
+    padding: 0.7rem 0.9rem;
+    border-radius: var(--sg-radius-control);
+    background: var(--sg-color-surface);
+    color: var(--sg-color-foreground);
+    box-shadow: var(--sg-shadow-input);
+    font: inherit;
+  }
+
+  :where([data-style]) .sg-input::placeholder {
+    color: var(--sg-color-muted-foreground);
+    opacity: 1;
+  }
+
+  :where([data-style]) .sg-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.3rem 0.7rem;
+    border-radius: var(--sg-radius-pill);
+    background: var(--sg-color-secondary);
+    color: var(--sg-color-secondary-foreground);
+    box-shadow: var(--sg-shadow-badge);
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+}
+
+@layer sg.utilities {
+  :where([data-style]) .sg-muted {
+    color: var(--sg-color-muted-foreground);
+  }
+
+  :where([data-style]) .sg-mono {
+    font-family: var(--sg-font-mono);
+  }
+
+  :where([data-style]) .sg-shadow-sm {
+    box-shadow: var(--sg-shadow-sm);
+  }
+
+  :where([data-style]) .sg-shadow {
+    box-shadow: var(--sg-shadow-md);
+  }
+
+  :where([data-style]) .sg-shadow-lg {
+    box-shadow: var(--sg-shadow-lg);
+  }
+
+  :where([data-style]) .sg-interactive {
+    transition:
+      transform var(--sg-motion-duration) var(--sg-motion-easing),
+      box-shadow var(--sg-motion-duration) var(--sg-motion-easing);
+  }
+
+  :where([data-style]) .sg-interactive:hover {
+    box-shadow: var(--sg-shadow-hover);
+    transform: var(--sg-transform-hover);
+  }
+}

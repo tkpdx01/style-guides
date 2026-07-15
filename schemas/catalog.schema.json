@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://style-guides.local/schemas/catalog.schema.json",
+  "title": "Generated style catalog",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["source", "styles"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "source": { "const": "styles/*/manifest.json" },
+    "styles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "version",
+          "status",
+          "summary",
+          "path",
+          "preview",
+          "files",
+          "tags",
+          "traits",
+          "bestFor",
+          "avoidFor"
+        ],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "version": { "type": "string" },
+          "status": { "type": "string" },
+          "summary": { "type": "string" },
+          "path": { "type": "string", "pattern": "^\\./styles/" },
+          "preview": { "type": "string", "pattern": "^\\./styles/" },
+          "files": {
+            "type": "object",
+            "required": ["guide", "prompt", "theme"]
+          },
+          "tags": { "type": "array", "items": { "type": "string" } },
+          "traits": { "type": "object" },
+          "bestFor": { "type": "array", "items": { "type": "string" } },
+          "avoidFor": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "$schema": "../../schemas/style-manifest.schema.json",
+  "id": "style-id",
+  "name": "Style Name",
+  "version": "0.1.0",
+  "status": "draft",
+  "summary": "Describe the style's distinct visual identity in one sentence.",
+  "description": "Explain the intended experience, strongest product fit, and the design choices that distinguish this style from existing entries.",
+  "preview": "./assets/preview.png",
+  "files": {
+    "guide": "./README.md",
+    "prompt": "./PROMPT.md",
+    "theme": "./theme.css"
+  },
+  "tags": [
+    "replace-me",
+    "visual-trait",
+    "brand-tone"
+  ],
+  "traits": {
+    "density": "balanced",
+    "contrast": "medium",
+    "energy": "balanced",
+    "shape": "balanced",
+    "motion": "subtle"
+  },
+  "bestFor": [
+    "A specific product context"
+  ],
+  "avoidFor": [
+    "A context where the style harms the task"
+  ],
+  "compatibleWith": [
+    "Plain CSS"
+  ],
+  "fonts": [
+    {
+      "role": "sans",
+      "family": "Font Family",
+      "fallback": "system-ui, sans-serif"
+    }
+  ]
+}

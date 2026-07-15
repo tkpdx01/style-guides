@@ -1,0 +1,65 @@
+{
+  "$schema": "./schemas/catalog.schema.json",
+  "source": "styles/*/manifest.json",
+  "styles": [
+    {
+      "id": "neo-brutalist",
+      "name": "Neo-Brutalist",
+      "version": "2.0.0",
+      "status": "ready",
+      "summary": "Warm, playful interfaces with bold borders, solid shadows, and tactile motion.",
+      "description": "A friendly neo-brutalist system for expressive product and marketing surfaces. It combines cream backgrounds, high-contrast outlines, rounded geometry, and small physical interactions without sacrificing accessibility.",
+      "preview": "./styles/neo-brutalist/assets/preview.png",
+      "files": {
+        "guide": "./styles/neo-brutalist/README.md",
+        "prompt": "./styles/neo-brutalist/PROMPT.md",
+        "theme": "./styles/neo-brutalist/theme.css"
+      },
+      "tags": [
+        "warm",
+        "playful",
+        "high-contrast",
+        "hard-shadows",
+        "bold-borders",
+        "handcrafted"
+      ],
+      "traits": {
+        "density": "relaxed",
+        "contrast": "high",
+        "energy": "bold",
+        "shape": "rounded",
+        "motion": "expressive"
+      },
+      "bestFor": [
+        "SaaS landing pages",
+        "Developer tools",
+        "Creative portfolios",
+        "Friendly consumer products"
+      ],
+      "avoidFor": [
+        "Dense enterprise dashboards",
+        "Form-heavy administrative tools",
+        "Brands that require a restrained luxury tone"
+      ],
+      "compatibleWith": [
+        "Plain CSS",
+        "React",
+        "Next.js",
+        "Tailwind CSS"
+      ],
+      "fonts": [
+        {
+          "role": "sans",
+          "family": "Nunito",
+          "fallback": "system-ui, sans-serif"
+        },
+        {
+          "role": "mono",
+          "family": "Space Mono",
+          "fallback": "ui-monospace, monospace"
+        }
+      ],
+      "path": "./styles/neo-brutalist"
+    }
+  ]
+}
