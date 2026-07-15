@@ -5,7 +5,8 @@
     background: var(--sg-color-background);
     color: var(--sg-color-foreground);
     font-family: var(--sg-font-sans);
-    line-height: 1.5;
+    font-size: var(--sg-font-size-base);
+    line-height: var(--sg-line-height-base);
     text-rendering: optimizeLegibility;
   }
 
@@ -45,15 +46,16 @@
 
   :where([data-style]) .sg-button {
     display: inline-flex;
-    min-height: 2.75rem;
+    min-height: var(--sg-control-min-height);
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
-    padding: 0.7rem 1.15rem;
+    gap: var(--sg-control-gap);
+    padding: var(--sg-control-padding-block) var(--sg-control-padding-inline);
     border-radius: var(--sg-radius-control);
     box-shadow: var(--sg-shadow-control);
     font: inherit;
-    font-weight: 700;
+    font-size: var(--sg-font-size-control);
+    font-weight: var(--sg-font-weight-control);
     line-height: 1;
     text-decoration: none;
     cursor: pointer;
@@ -103,13 +105,14 @@
 
   :where([data-style]) .sg-input {
     width: 100%;
-    min-height: 2.75rem;
-    padding: 0.7rem 0.9rem;
+    min-height: var(--sg-control-min-height);
+    padding: var(--sg-input-padding-block) var(--sg-input-padding-inline);
     border-radius: var(--sg-radius-control);
     background: var(--sg-color-surface);
     color: var(--sg-color-foreground);
     box-shadow: var(--sg-shadow-input);
     font: inherit;
+    font-size: var(--sg-font-size-control);
   }
 
   :where([data-style]) .sg-input::placeholder {
@@ -121,13 +124,13 @@
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
-    padding: 0.3rem 0.7rem;
+    padding: var(--sg-badge-padding-block) var(--sg-badge-padding-inline);
     border-radius: var(--sg-radius-pill);
     background: var(--sg-color-secondary);
     color: var(--sg-color-secondary-foreground);
     box-shadow: var(--sg-shadow-badge);
-    font-size: 0.875rem;
-    font-weight: 700;
+    font-size: var(--sg-font-size-badge);
+    font-weight: var(--sg-font-weight-badge);
     line-height: 1;
   }
 }

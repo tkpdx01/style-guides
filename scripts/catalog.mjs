@@ -10,7 +10,7 @@ const catalogPath = path.join(rootDir, "catalog.json")
 const checkOnly = process.argv.includes("--check")
 
 const allowedStatus = new Set(["draft", "review", "ready", "deprecated"])
-const allowedFontRoles = new Set(["sans", "serif", "mono", "display"])
+const allowedFontRoles = new Set(["sans", "serif", "mono", "display", "data"])
 const allowedManifestFields = new Set([
   "$schema",
   "id",
@@ -183,14 +183,23 @@ async function loadStyle(directoryName) {
   }
 
   const fileKeys = Object.keys(manifest.files)
-  if (fileKeys.length !== 3 || fileKeys.some((key) => !["guide", "prompt", "theme"].includes(key))) {
-    fail(`${styleId}: files must contain exactly guide, prompt, and theme`)
+  const requiredFileKeys = ["guide", "prompt", "theme"]
+  const allowedFileKeys = new Set([...requiredFileKeys, "demo"])
+
+  if (requiredFileKeys.some((key) => !fileKeys.includes(key))) {
+    fail(`${styleId}: files must contain guide, prompt, and theme`)
+  }
+
+  const unsupportedFileKey = fileKeys.find((key) => !allowedFileKeys.has(key))
+  if (unsupportedFileKey) {
+    fail(`${styleId}: unsupported files entry ${unsupportedFileKey}`)
   }
 
   await requireLocalFile(styleDir, manifest.preview, "preview", styleId)
-  await requireLocalFile(styleDir, manifest.files.guide, "files.guide", styleId)
-  await requireLocalFile(styleDir, manifest.files.prompt, "files.prompt", styleId)
-  await requireLocalFile(styleDir, manifest.files.theme, "files.theme", styleId)
+
+  for (const [key, relativePath] of Object.entries(manifest.files)) {
+    await requireLocalFile(styleDir, relativePath, `files.${key}`, styleId)
+  }
 
   const fromRoot = (relativePath) => `./styles/${manifest.id}/${relativePath.slice(2)}`
   const catalogStyle = { ...manifest }
@@ -214,7 +223,8 @@ function renderCatalog(styles) {
   const rows = styles.map((style) => {
     const tags = style.tags.map((tag) => `\`${tag}\``).join(" ")
     const preview = `<a href="${style.files.guide}"><img src="${style.preview}" width="260" alt="${escapeCell(style.name)} preview"></a>`
-    const identity = `**[${escapeCell(style.name)}](${style.files.guide})**<br>${escapeCell(style.summary)}<br>${tags}`
+    const demoLink = style.files.demo ? `<br>[Open demo](${style.files.demo})` : ""
+    const identity = `**[${escapeCell(style.name)}](${style.files.guide})**<br>${escapeCell(style.summary)}${demoLink}<br>${tags}`
     const fit = style.bestFor.map((item) => escapeCell(item)).join("<br>")
     const traits = Object.entries(style.traits)
       .map(([key, value]) => `${key}: \`${value}\``)

@@ -45,7 +45,7 @@ Before adopting a style, apply it to one real slice containing:
 - loading, empty, error, and disabled states;
 - mobile and wide-screen layouts.
 
-Do not evaluate a style using only its hero section.
+Do not evaluate a style using only its hero section. When a manifest exposes `files.demo`, use the Demo to verify density, keyboard behavior, responsive adaptation, and state transitions with representative content.
 
 ## 5. Score the candidate
 

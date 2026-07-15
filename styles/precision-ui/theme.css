@@ -1,0 +1,136 @@
+@layer sg.theme {
+  [data-style="precision-ui"] {
+    color-scheme: light;
+
+    --sg-color-primary: hsl(220 74% 48%);
+    --sg-color-primary-foreground: hsl(0 0% 100%);
+    --sg-color-secondary: hsl(216 22% 94%);
+    --sg-color-secondary-foreground: hsl(220 22% 20%);
+    --sg-color-background: hsl(216 20% 97%);
+    --sg-color-foreground: hsl(220 24% 15%);
+    --sg-color-surface: hsl(0 0% 100%);
+    --sg-color-surface-foreground: hsl(220 24% 15%);
+    --sg-color-muted: hsl(216 18% 93%);
+    --sg-color-muted-foreground: hsl(218 11% 42%);
+    --sg-color-accent: hsl(194 84% 38%);
+    --sg-color-border: hsl(216 16% 81%);
+    --sg-color-focus: hsl(220 88% 56%);
+    --sg-color-danger: hsl(4 72% 46%);
+
+    --sg-font-sans: "Segoe UI Variable", "Segoe UI", Inter, system-ui, sans-serif;
+    --sg-font-mono: "Cascadia Mono", Consolas, ui-monospace, monospace;
+    --sg-font-size-base: 0.8125rem;
+    --sg-font-size-control: 0.8125rem;
+    --sg-font-size-badge: 0.6875rem;
+    --sg-font-weight-control: 600;
+    --sg-font-weight-badge: 600;
+    --sg-line-height-base: 1.3847;
+    --sg-control-min-height: 2rem;
+    --sg-control-gap: 0.375rem;
+    --sg-control-padding-block: 0.375rem;
+    --sg-control-padding-inline: 0.75rem;
+    --sg-input-padding-block: 0.375rem;
+    --sg-input-padding-inline: 0.625rem;
+    --sg-badge-padding-block: 0.125rem;
+    --sg-badge-padding-inline: 0.375rem;
+
+    --sg-border-width: 1px;
+    --sg-focus-width: 2px;
+    --sg-focus-offset: 2px;
+    --sg-radius-control: 4px;
+    --sg-radius-surface: 6px;
+    --sg-radius-pill: 999px;
+    --sg-space-card: 1rem;
+
+    --sg-shadow-sm: 0 1px 2px hsl(220 30% 16% / 0.07);
+    --sg-shadow-md: 0 3px 10px hsl(220 30% 16% / 0.09);
+    --sg-shadow-lg: 0 10px 28px hsl(220 30% 16% / 0.13);
+    --sg-shadow-control: none;
+    --sg-shadow-surface: var(--sg-shadow-sm);
+    --sg-shadow-input: inset 0 1px 1px hsl(220 30% 16% / 0.035);
+    --sg-shadow-badge: none;
+    --sg-shadow-hover: var(--sg-shadow-md);
+    --sg-shadow-active: inset 0 1px 2px hsl(220 30% 16% / 0.12);
+
+    --sg-transform-hover: none;
+    --sg-transform-active: none;
+    --sg-motion-duration: 110ms;
+    --sg-motion-easing: ease-out;
+
+    --pu-sidebar-width: 14rem;
+    --pu-topbar-height: 3rem;
+    --pu-content-max: 90rem;
+    --pu-page-padding: 1.25rem;
+    --pu-panel-padding: 1rem;
+    --pu-nav-item-height: 2rem;
+    --pu-sidebar-background: hsl(220 24% 14%);
+    --pu-sidebar-foreground: hsl(216 18% 83%);
+    --pu-sidebar-muted: hsl(216 12% 59%);
+    --pu-sidebar-hover: hsl(220 20% 20%);
+    --pu-sidebar-active: hsl(220 74% 56% / 0.2);
+    --pu-sidebar-active-border: hsl(220 86% 65%);
+    --pu-chart-primary: hsl(220 74% 52%);
+    --pu-chart-secondary: hsl(194 72% 45%);
+    --pu-positive: hsl(154 56% 34%);
+    --pu-warning: hsl(34 88% 42%);
+    --pu-negative: hsl(4 72% 46%);
+  }
+
+  [data-style="precision-ui"][data-density="comfortable"] {
+    --sg-font-size-base: 0.875rem;
+    --sg-font-size-control: 0.875rem;
+    --sg-font-size-badge: 0.75rem;
+    --sg-line-height-base: 1.4286;
+    --sg-control-min-height: 2.25rem;
+    --sg-control-gap: 0.5rem;
+    --sg-control-padding-block: 0.5rem;
+    --sg-control-padding-inline: 0.875rem;
+    --sg-input-padding-block: 0.5rem;
+    --sg-input-padding-inline: 0.75rem;
+    --sg-badge-padding-block: 0.1875rem;
+    --sg-badge-padding-inline: 0.5rem;
+    --sg-space-card: 1.25rem;
+
+    --pu-topbar-height: 3.5rem;
+    --pu-page-padding: 1.5rem;
+    --pu-panel-padding: 1.25rem;
+    --pu-nav-item-height: 2.25rem;
+  }
+
+  [data-style="precision-ui"][data-color-scheme="dark"] {
+    color-scheme: dark;
+
+    --sg-color-primary: hsl(220 86% 66%);
+    --sg-color-primary-foreground: hsl(220 35% 10%);
+    --sg-color-secondary: hsl(220 18% 20%);
+    --sg-color-secondary-foreground: hsl(216 18% 91%);
+    --sg-color-background: hsl(220 24% 9%);
+    --sg-color-foreground: hsl(216 18% 91%);
+    --sg-color-surface: hsl(220 22% 12%);
+    --sg-color-surface-foreground: hsl(216 18% 91%);
+    --sg-color-muted: hsl(220 18% 18%);
+    --sg-color-muted-foreground: hsl(216 12% 66%);
+    --sg-color-accent: hsl(194 84% 61%);
+    --sg-color-border: hsl(220 14% 28%);
+    --sg-color-focus: hsl(220 90% 70%);
+    --sg-color-danger: hsl(4 78% 66%);
+
+    --sg-shadow-sm: 0 1px 2px hsl(0 0% 0% / 0.28);
+    --sg-shadow-md: 0 3px 10px hsl(0 0% 0% / 0.34);
+    --sg-shadow-lg: 0 10px 28px hsl(0 0% 0% / 0.44);
+    --sg-shadow-input: inset 0 1px 1px hsl(0 0% 0% / 0.2);
+    --sg-shadow-active: inset 0 1px 2px hsl(0 0% 0% / 0.36);
+
+    --pu-sidebar-background: hsl(220 28% 7%);
+    --pu-sidebar-foreground: hsl(216 16% 79%);
+    --pu-sidebar-muted: hsl(216 10% 57%);
+    --pu-sidebar-hover: hsl(220 20% 15%);
+    --pu-sidebar-active: hsl(220 80% 65% / 0.18);
+    --pu-sidebar-active-border: hsl(220 88% 70%);
+    --pu-chart-primary: hsl(220 86% 66%);
+    --pu-chart-secondary: hsl(194 78% 61%);
+    --pu-positive: hsl(154 55% 59%);
+    --pu-warning: hsl(38 86% 62%);
+    --pu-negative: hsl(4 78% 68%);
+  }
+}

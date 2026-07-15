@@ -36,7 +36,14 @@
           "preview": { "type": "string", "pattern": "^\\./styles/" },
           "files": {
             "type": "object",
-            "required": ["guide", "prompt", "theme"]
+            "additionalProperties": false,
+            "required": ["guide", "prompt", "theme"],
+            "properties": {
+              "guide": { "type": "string" },
+              "prompt": { "type": "string" },
+              "theme": { "type": "string" },
+              "demo": { "type": "string" }
+            }
           },
           "tags": { "type": "array", "items": { "type": "string" } },
           "traits": { "type": "object" },

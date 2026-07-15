@@ -44,7 +44,7 @@ This makes styles interchangeable without creating one component implementation 
 
 ### 4. Evidence layer
 
-`assets/preview.png` shows the visual direction that the written rules must reproduce. It is evidence, not an implementation specification: brand names, copy, and proprietary artwork in a reference are never part of the style contract.
+A style's `assets/preview.*` shows the visual direction that the written rules must reproduce. A manifest may also expose an optional `files.demo` entry for an executable, representative implementation. Preview and demo are evidence, not a specification: brand names, copy, and proprietary artwork in a reference are never part of the style contract.
 
 ## Semantic token contract
 
@@ -53,7 +53,8 @@ Every ready theme defines these groups:
 | Group | Required roles |
 |---|---|
 | Color | background, foreground, surface, primary, secondary, muted, accent, border, focus, danger |
-| Typography | sans and mono stacks |
+| Typography | sans and mono stacks, base and control sizes, weights, and line height |
+| Density | control height, gaps, and component padding |
 | Geometry | control radius, surface radius, pill radius, border width |
 | Elevation | small, medium, large, control, surface, input, badge, hover, active shadows |
 | Motion | duration, easing, hover transform, active transform |

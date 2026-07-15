@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Precision Grid demo</title>
+  <link rel="stylesheet" href="../../../src/core.css">
+  <link rel="stylesheet" href="../theme.css">
+  <link rel="stylesheet" href="./demo.css">
+  <script src="./demo.js" defer></script>
+</head>
+<body data-style="precision-grid" data-density="compact">
+  <div class="pg-shell">
+    <header class="pg-appbar">
+      <div class="pg-product">
+        <span class="pg-product-mark" aria-hidden="true">P</span>
+        <span class="pg-product-name">Ops Ledger</span>
+      </div>
+      <div class="pg-document">
+        <strong>FY26 operating plan</strong>
+        <span class="pg-save-state">Saved locally</span>
+      </div>
+      <label class="pg-global-search">
+        <span class="pg-visually-hidden">Search commands</span>
+        <span aria-hidden="true">⌕</span>
+        <input type="search" placeholder="Search commands">
+        <kbd>Ctrl K</kbd>
+      </label>
+      <div class="pg-app-actions">
+        <button class="pg-icon-button" type="button" data-theme-toggle aria-pressed="false" aria-label="Toggle dark color scheme">◐</button>
+        <button class="pg-avatar" type="button" aria-label="Open profile">AM</button>
+      </div>
+    </header>
+
+    <div class="pg-command-tabs">
+      <nav class="pg-view-tabs" aria-label="Demo views" role="tablist">
+        <button type="button" role="tab" aria-selected="true" aria-controls="workbook-panel" id="workbook-tab" data-view-tab="workbook">Workbook</button>
+        <button type="button" role="tab" aria-selected="false" aria-controls="records-panel" id="records-tab" data-view-tab="records">Records</button>
+        <button type="button" role="tab" aria-selected="false" aria-controls="settings-panel" id="settings-tab" data-view-tab="settings">Settings</button>
+      </nav>
+      <div class="pg-density-switch" role="group" aria-label="Display density">
+        <button type="button" data-density-value="compact" aria-pressed="true">Compact</button>
+        <button type="button" data-density-value="comfortable" aria-pressed="false">Comfortable</button>
+      </div>
+    </div>
+
+    <section class="pg-ribbon" aria-label="Workbook actions">
+      <div class="pg-ribbon-group">
+        <button class="pg-command pg-command--primary" type="button"><span aria-hidden="true">＋</span> New row</button>
+        <button class="pg-command" type="button"><span aria-hidden="true">↥</span> Import</button>
+      </div>
+      <div class="pg-ribbon-group">
+        <button class="pg-command" type="button"><strong>B</strong><span class="pg-visually-hidden">Bold</span></button>
+        <button class="pg-command" type="button"><em>I</em><span class="pg-visually-hidden">Italic</span></button>
+        <button class="pg-command" type="button" aria-label="Align left">≡</button>
+        <button class="pg-command" type="button" aria-label="Format as currency">$</button>
+        <button class="pg-command" type="button" aria-label="Format as percentage">%</button>
+      </div>
+      <div class="pg-ribbon-group pg-ribbon-group--wide">
+        <button class="pg-command" type="button"><span aria-hidden="true">⇅</span> Sort</button>
+        <button class="pg-command" type="button"><span aria-hidden="true">▽</span> Filter</button>
+        <button class="pg-command" type="button"><span aria-hidden="true">▦</span> Freeze</button>
+      </div>
+      <div class="pg-ribbon-spacer"></div>
+      <span class="pg-collaborators"><span>JL</span><span>RK</span> 2 editing</span>
+    </section>
+
+    <main class="pg-main">
+      <section id="workbook-panel" class="pg-view-panel pg-workbook-panel" role="tabpanel" aria-labelledby="workbook-tab" data-view-panel="workbook">
+        <div class="pg-formula-bar">
+          <output class="pg-name-box" data-name-box aria-label="Selected cell">D5</output>
+          <span class="pg-fx" aria-hidden="true">fx</span>
+          <input data-formula-input aria-label="Selected cell value or formula" value="=SUM(Jan:Jun)" readonly>
+        </div>
+
+        <div class="pg-workspace">
+          <div class="pg-grid-region" aria-label="Operating plan worksheet">
+            <div class="pg-grid-scroll">
+              <table class="pg-sheet" role="grid" aria-multiselectable="false" aria-label="FY26 operating plan">
+                <colgroup>
+                  <col class="pg-row-number-col">
+                  <col class="pg-col-account">
+                  <col class="pg-col-region">
+                  <col class="pg-col-owner">
+                  <col class="pg-col-money">
+                  <col class="pg-col-money">
+                  <col class="pg-col-percent">
+                  <col class="pg-col-money">
+                  <col class="pg-col-status">
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th class="pg-corner" aria-label="Select all"></th>
+                    <th scope="col" data-column-header="A">A</th>
+                    <th scope="col" data-column-header="B">B</th>
+                    <th scope="col" data-column-header="C">C</th>
+                    <th scope="col" data-column-header="D" class="is-active">D</th>
+                    <th scope="col" data-column-header="E">E</th>
+                    <th scope="col" data-column-header="F">F</th>
+                    <th scope="col" data-column-header="G">G</th>
+                    <th scope="col" data-column-header="H">H</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="pg-field-row">
+                    <th scope="row" data-row-header="1">1</th>
+                    <td>Account</td><td>Region</td><td>Owner</td><td class="pg-number">Revenue</td><td class="pg-number">Cost</td><td class="pg-number">Margin</td><td class="pg-number">Forecast</td><td>Status</td>
+                  </tr>
+                  <tr>
+                    <th scope="row" data-row-header="2">2</th>
+                    <td data-cell="A2" data-row="2" data-column="A" tabindex="-1">Northstar Labs</td>
+                    <td data-cell="B2" data-row="2" data-column="B" tabindex="-1">West</td>
+                    <td data-cell="C2" data-row="2" data-column="C" tabindex="-1">A. Moran</td>
+                    <td data-cell="D2" data-row="2" data-column="D" data-formula="=SUM(Jan:Jun)" class="pg-number" tabindex="-1">$184,200</td>
+                    <td data-cell="E2" data-row="2" data-column="E" data-formula="=D2-F2" class="pg-number" tabindex="-1">$121,572</td>
+                    <td data-cell="F2" data-row="2" data-column="F" data-formula="=(D2-E2)/D2" class="pg-number pg-positive" tabindex="-1">34.0%</td>
+                    <td data-cell="G2" data-row="2" data-column="G" class="pg-number" tabindex="-1">$192,000</td>
+                    <td data-cell="H2" data-row="2" data-column="H" tabindex="-1"><span class="pg-status pg-status--good">On track</span></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" data-row-header="3">3</th>
+                    <td data-cell="A3" data-row="3" data-column="A" tabindex="-1">Harbor Systems</td>
+                    <td data-cell="B3" data-row="3" data-column="B" tabindex="-1">East</td>
+                    <td data-cell="C3" data-row="3" data-column="C" tabindex="-1">J. Lee</td>
+                    <td data-cell="D3" data-row="3" data-column="D" data-formula="=SUM(Jan:Jun)" class="pg-number" tabindex="-1">$96,450</td>
+                    <td data-cell="E3" data-row="3" data-column="E" class="pg-number" tabindex="-1">$73,302</td>
+                    <td data-cell="F3" data-row="3" data-column="F" class="pg-number" tabindex="-1">24.0%</td>
+                    <td data-cell="G3" data-row="3" data-column="G" class="pg-number" tabindex="-1">$104,000</td>
+                    <td data-cell="H3" data-row="3" data-column="H" tabindex="-1"><span class="pg-status pg-status--watch">Review</span></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" data-row-header="4">4</th>
+                    <td data-cell="A4" data-row="4" data-column="A" tabindex="-1">Meridian Foods</td>
+                    <td data-cell="B4" data-row="4" data-column="B" tabindex="-1">Central</td>
+                    <td data-cell="C4" data-row="4" data-column="C" tabindex="-1">R. Khan</td>
+                    <td data-cell="D4" data-row="4" data-column="D" data-formula="=SUM(Jan:Jun)" class="pg-number" tabindex="-1">$228,900</td>
+                    <td data-cell="E4" data-row="4" data-column="E" class="pg-number" tabindex="-1">$151,074</td>
+                    <td data-cell="F4" data-row="4" data-column="F" class="pg-number pg-positive" tabindex="-1">34.0%</td>
+                    <td data-cell="G4" data-row="4" data-column="G" class="pg-number" tabindex="-1">$236,000</td>
+                    <td data-cell="H4" data-row="4" data-column="H" tabindex="-1"><span class="pg-status pg-status--good">On track</span></td>
+                  </tr>
+                  <tr class="is-active-row">
+                    <th scope="row" data-row-header="5" class="is-active">5</th>
+                    <td data-cell="A5" data-row="5" data-column="A" tabindex="-1">Lumen Retail</td>
+                    <td data-cell="B5" data-row="5" data-column="B" tabindex="-1">South</td>
+                    <td data-cell="C5" data-row="5" data-column="C" tabindex="-1">S. Patel</td>
+                    <td data-cell="D5" data-row="5" data-column="D" data-formula="=SUM(Jan:Jun)" class="pg-number is-selected" tabindex="0">$142,800</td>
+                    <td data-cell="E5" data-row="5" data-column="E" class="pg-number" tabindex="-1">$105,672</td>
+                    <td data-cell="F5" data-row="5" data-column="F" class="pg-number" tabindex="-1">26.0%</td>
+                    <td data-cell="G5" data-row="5" data-column="G" class="pg-number" tabindex="-1">$151,000</td>
+                    <td data-cell="H5" data-row="5" data-column="H" tabindex="-1"><span class="pg-status pg-status--watch">Review</span></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" data-row-header="6">6</th>
+                    <td data-cell="A6" data-row="6" data-column="A" tabindex="-1">Pioneer Health</td>
+                    <td data-cell="B6" data-row="6" data-column="B" tabindex="-1">East</td>
+                    <td data-cell="C6" data-row="6" data-column="C" tabindex="-1">M. Chen</td>
+                    <td data-cell="D6" data-row="6" data-column="D" class="pg-number" tabindex="-1">$310,600</td>
+                    <td data-cell="E6" data-row="6" data-column="E" class="pg-number" tabindex="-1">$211,208</td>
+                    <td data-cell="F6" data-row="6" data-column="F" class="pg-number pg-positive" tabindex="-1">32.0%</td>
+                    <td data-cell="G6" data-row="6" data-column="G" class="pg-number" tabindex="-1">$318,000</td>
+                    <td data-cell="H6" data-row="6" data-column="H" tabindex="-1"><span class="pg-status pg-status--good">On track</span></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" data-row-header="7">7</th>
+                    <td data-cell="A7" data-row="7" data-column="A" tabindex="-1">Summit Works</td>
+                    <td data-cell="B7" data-row="7" data-column="B" tabindex="-1">West</td>
+                    <td data-cell="C7" data-row="7" data-column="C" tabindex="-1">D. Young</td>
+                    <td data-cell="D7" data-row="7" data-column="D" class="pg-number" tabindex="-1">$78,200</td>
+                    <td data-cell="E7" data-row="7" data-column="E" class="pg-number" tabindex="-1">$61,778</td>
+                    <td data-cell="F7" data-row="7" data-column="F" class="pg-number pg-negative" tabindex="-1">21.0%</td>
+                    <td data-cell="G7" data-row="7" data-column="G" class="pg-number" tabindex="-1">$91,000</td>
+                    <td data-cell="H7" data-row="7" data-column="H" tabindex="-1"><span class="pg-status pg-status--risk">At risk</span></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" data-row-header="8">8</th>
+                    <td data-cell="A8" data-row="8" data-column="A" tabindex="-1">Arcwell Energy</td>
+                    <td data-cell="B8" data-row="8" data-column="B" tabindex="-1">Central</td>
+                    <td data-cell="C8" data-row="8" data-column="C" tabindex="-1">N. Brooks</td>
+                    <td data-cell="D8" data-row="8" data-column="D" class="pg-number" tabindex="-1">$167,320</td>
+                    <td data-cell="E8" data-row="8" data-column="E" class="pg-number" tabindex="-1">$115,451</td>
+                    <td data-cell="F8" data-row="8" data-column="F" class="pg-number pg-positive" tabindex="-1">31.0%</td>
+                    <td data-cell="G8" data-row="8" data-column="G" class="pg-number" tabindex="-1">$171,000</td>
+                    <td data-cell="H8" data-row="8" data-column="H" tabindex="-1"><span class="pg-status pg-status--good">On track</span></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" data-row-header="9">9</th>
+                    <td data-cell="A9" data-row="9" data-column="A" tabindex="-1">Cedar Logistics</td>
+                    <td data-cell="B9" data-row="9" data-column="B" tabindex="-1">South</td>
+                    <td data-cell="C9" data-row="9" data-column="C" tabindex="-1">T. Evans</td>
+                    <td data-cell="D9" data-row="9" data-column="D" class="pg-number" tabindex="-1">$119,700</td>
+                    <td data-cell="E9" data-row="9" data-column="E" class="pg-number" tabindex="-1">$87,381</td>
+                    <td data-cell="F9" data-row="9" data-column="F" class="pg-number" tabindex="-1">27.0%</td>
+                    <td data-cell="G9" data-row="9" data-column="G" class="pg-number" tabindex="-1">$125,000</td>
+                    <td data-cell="H9" data-row="9" data-column="H" tabindex="-1"><span class="pg-status pg-status--watch">Review</span></td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <th scope="row">10</th>
+                    <td colspan="3">Portfolio total</td>
+                    <td class="pg-number">$1,328,170</td>
+                    <td class="pg-number">$927,438</td>
+                    <td class="pg-number">30.2%</td>
+                    <td class="pg-number">$1,388,000</td>
+                    <td>8 accounts</td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+            <div class="pg-sheet-tabs" role="tablist" aria-label="Workbook sheets">
+              <button type="button" aria-label="Add sheet">＋</button>
+              <button type="button" role="tab" aria-selected="true">Operating plan</button>
+              <button type="button" role="tab" aria-selected="false">Headcount</button>
+              <button type="button" role="tab" aria-selected="false">Assumptions</button>
+            </div>
+          </div>
+
+          <aside class="pg-inspector" aria-labelledby="inspector-title">
+            <div class="pg-inspector-header">
+              <div>
+                <span class="pg-eyebrow">Selected account</span>
+                <h2 id="inspector-title">Lumen Retail</h2>
+              </div>
+              <button class="pg-icon-button" type="button" aria-label="Close inspector">×</button>
+            </div>
+            <dl class="pg-metrics">
+              <div><dt>Revenue</dt><dd>$142.8k</dd><span>+8.4% YoY</span></div>
+              <div><dt>Margin</dt><dd>26.0%</dd><span>-1.2 pts</span></div>
+              <div><dt>Forecast</dt><dd>$151k</dd><span>94.6% booked</span></div>
+              <div><dt>Open items</dt><dd>3</dd><span>1 overdue</span></div>
+            </dl>
+            <section class="pg-inspector-section">
+              <div class="pg-section-heading"><h3>Quarter trend</h3><span>USD</span></div>
+              <div class="pg-mini-chart" aria-label="Quarterly revenue increased from 31 to 43 thousand dollars">
+                <span style="--bar: 52%"><i>Q1</i></span>
+                <span style="--bar: 68%"><i>Q2</i></span>
+                <span style="--bar: 61%"><i>Q3</i></span>
+                <span style="--bar: 82%"><i>Q4</i></span>
+              </div>
+            </section>
+            <section class="pg-inspector-section">
+              <div class="pg-section-heading"><h3>Review note</h3><span>Today</span></div>
+              <p>Validate logistics assumptions before the July forecast lock.</p>
+              <button class="sg-button sg-button--primary" type="button">Open account</button>
+            </section>
+          </aside>
+        </div>
+      </section>
+
+      <section id="records-panel" class="pg-view-panel pg-records-panel" role="tabpanel" aria-labelledby="records-tab" data-view-panel="records" hidden>
+        <header class="pg-panel-header">
+          <div><span class="pg-eyebrow">Operations</span><h1>Account records</h1><p>Search, filter, and review dense operational data.</p></div>
+          <button class="sg-button sg-button--primary" type="button">Create record</button>
+        </header>
+        <div class="pg-filterbar">
+          <label class="pg-filter-search"><span>Find</span><input class="sg-input" type="search" placeholder="Account, owner, or region" data-record-filter></label>
+          <label><span>Region</span><select class="sg-input"><option>All regions</option><option>East</option><option>West</option><option>Central</option><option>South</option></select></label>
+          <label><span>Status</span><select class="sg-input"><option>Any status</option><option>On track</option><option>Review</option><option>At risk</option></select></label>
+          <button class="sg-button sg-button--secondary" type="button">More filters <span aria-hidden="true">⌄</span></button>
+        </div>
+        <div class="pg-table-card">
+          <table class="pg-data-table" id="records-table">
+            <thead><tr><th scope="col"><input type="checkbox" aria-label="Select all records"></th><th scope="col">Account</th><th scope="col">Owner</th><th scope="col">Region</th><th scope="col" class="pg-number">Revenue</th><th scope="col" class="pg-number">Margin</th><th scope="col">Status</th><th scope="col">Updated</th><th scope="col"><span class="pg-visually-hidden">Actions</span></th></tr></thead>
+            <tbody>
+              <tr data-record><td><input type="checkbox" aria-label="Select Northstar Labs"></td><th scope="row">Northstar Labs<small>AC-1042</small></th><td>A. Moran</td><td>West</td><td class="pg-number">$184,200</td><td class="pg-number">34.0%</td><td><span class="pg-status pg-status--good">On track</span></td><td>12 min ago</td><td><button class="pg-row-action" aria-label="Actions for Northstar Labs">•••</button></td></tr>
+              <tr data-record><td><input type="checkbox" aria-label="Select Harbor Systems"></td><th scope="row">Harbor Systems<small>AC-1048</small></th><td>J. Lee</td><td>East</td><td class="pg-number">$96,450</td><td class="pg-number">24.0%</td><td><span class="pg-status pg-status--watch">Review</span></td><td>41 min ago</td><td><button class="pg-row-action" aria-label="Actions for Harbor Systems">•••</button></td></tr>
+              <tr data-record><td><input type="checkbox" aria-label="Select Meridian Foods"></td><th scope="row">Meridian Foods<small>AC-1051</small></th><td>R. Khan</td><td>Central</td><td class="pg-number">$228,900</td><td class="pg-number">34.0%</td><td><span class="pg-status pg-status--good">On track</span></td><td>1 hr ago</td><td><button class="pg-row-action" aria-label="Actions for Meridian Foods">•••</button></td></tr>
+              <tr data-record><td><input type="checkbox" aria-label="Select Lumen Retail"></td><th scope="row">Lumen Retail<small>AC-1057</small></th><td>S. Patel</td><td>South</td><td class="pg-number">$142,800</td><td class="pg-number">26.0%</td><td><span class="pg-status pg-status--watch">Review</span></td><td>2 hrs ago</td><td><button class="pg-row-action" aria-label="Actions for Lumen Retail">•••</button></td></tr>
+              <tr data-record><td><input type="checkbox" aria-label="Select Pioneer Health"></td><th scope="row">Pioneer Health<small>AC-1063</small></th><td>M. Chen</td><td>East</td><td class="pg-number">$310,600</td><td class="pg-number">32.0%</td><td><span class="pg-status pg-status--good">On track</span></td><td>Yesterday</td><td><button class="pg-row-action" aria-label="Actions for Pioneer Health">•••</button></td></tr>
+              <tr data-record><td><input type="checkbox" aria-label="Select Summit Works"></td><th scope="row">Summit Works<small>AC-1069</small></th><td>D. Young</td><td>West</td><td class="pg-number">$78,200</td><td class="pg-number">21.0%</td><td><span class="pg-status pg-status--risk">At risk</span></td><td>Yesterday</td><td><button class="pg-row-action" aria-label="Actions for Summit Works">•••</button></td></tr>
+            </tbody>
+          </table>
+          <div class="pg-table-footer"><span data-record-count>6 records</span><nav aria-label="Pagination"><button type="button" disabled>Previous</button><strong>1</strong><button type="button">Next</button></nav></div>
+        </div>
+      </section>
+
+      <section id="settings-panel" class="pg-view-panel pg-settings-panel" role="tabpanel" aria-labelledby="settings-tab" data-view-panel="settings" hidden>
+        <header class="pg-panel-header">
+          <div><span class="pg-eyebrow">Workspace</span><h1>Planning settings</h1><p>A compact form keeps related defaults visible without fragmenting the task.</p></div>
+          <div class="pg-header-actions"><button class="sg-button sg-button--ghost" type="button">Discard</button><button class="sg-button sg-button--primary" type="button">Save changes</button></div>
+        </header>
+        <form class="pg-settings-form">
+          <section class="pg-settings-section" aria-labelledby="general-heading">
+            <div class="pg-settings-copy"><h2 id="general-heading">General</h2><p>Workbook identity and reporting defaults.</p></div>
+            <div class="pg-field-grid">
+              <label><span>Workspace name</span><input class="sg-input" value="FY26 operating plan"></label>
+              <label><span>Fiscal year</span><select class="sg-input"><option>2026</option><option>2027</option></select></label>
+              <label><span>Reporting currency</span><select class="sg-input"><option>USD — US Dollar</option><option>EUR — Euro</option></select></label>
+              <label><span>Number format</span><select class="sg-input"><option>1,234.56</option><option>1.234,56</option></select></label>
+              <label class="pg-field-span"><span>Description</span><textarea class="sg-input" rows="2">Quarterly operating plan and account-level forecast.</textarea></label>
+            </div>
+          </section>
+          <section class="pg-settings-section" aria-labelledby="calculation-heading">
+            <div class="pg-settings-copy"><h2 id="calculation-heading">Calculation</h2><p>Control refresh and validation behavior.</p></div>
+            <div class="pg-toggle-list">
+              <label><input type="checkbox" checked><span><strong>Automatic recalculation</strong><small>Update dependent values after edits.</small></span></label>
+              <label><input type="checkbox" checked><span><strong>Flag forecast variance</strong><small>Show a warning when variance exceeds 10%.</small></span></label>
+              <label><input type="checkbox"><span><strong>Allow circular references</strong><small>Not recommended for shared workbooks.</small></span></label>
+            </div>
+          </section>
+          <section class="pg-settings-section" aria-labelledby="display-heading">
+            <div class="pg-settings-copy"><h2 id="display-heading">Display</h2><p>Default density and grid visibility.</p></div>
+            <div class="pg-field-grid">
+              <fieldset><legend>Density</legend><label class="pg-radio"><input type="radio" name="form-density" value="compact" checked> Compact</label><label class="pg-radio"><input type="radio" name="form-density" value="comfortable"> Comfortable</label></fieldset>
+              <fieldset><legend>Grid lines</legend><label class="pg-radio"><input type="radio" name="grid-lines" checked> Always show</label><label class="pg-radio"><input type="radio" name="grid-lines"> Hide in reports</label></fieldset>
+            </div>
+          </section>
+        </form>
+      </section>
+    </main>
+
+    <footer class="pg-statusbar">
+      <span><i class="pg-ready-dot" aria-hidden="true"></i> Ready</span>
+      <span class="pg-status-selection">Selected: D5</span>
+      <span class="pg-status-spacer"></span>
+      <span>Count: 8</span>
+      <span>Average: 28.4%</span>
+      <span>Sum: $1,328,170</span>
+      <label class="pg-zoom">Zoom <input type="range" min="80" max="140" value="100" aria-label="Demo zoom"><output>100%</output></label>
+    </footer>
+  </div>
+</body>
+</html>

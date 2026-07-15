@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Precision UI demo</title>
+  <link rel="stylesheet" href="../../../src/core.css">
+  <link rel="stylesheet" href="../theme.css">
+  <link rel="stylesheet" href="./demo.css">
+  <script src="./demo.js" defer></script>
+</head>
+<body data-style="precision-ui" data-density="compact">
+  <div class="pu-app">
+    <div class="pu-scrim" data-sidebar-close></div>
+    <aside class="pu-sidebar" aria-label="Primary navigation">
+      <div class="pu-brand">
+        <span class="pu-brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span>Arcframe</span>
+      </div>
+
+      <button class="pu-workspace" type="button">
+        <span class="pu-workspace-icon" aria-hidden="true">NW</span>
+        <span><strong>Northwind Ops</strong><small>Production workspace</small></span>
+        <span aria-hidden="true">⌄</span>
+      </button>
+
+      <nav class="pu-nav">
+        <span class="pu-nav-label">Workspace</span>
+        <button type="button" data-page-link="overview" aria-current="page"><span aria-hidden="true">⌂</span>Overview</button>
+        <button type="button" data-page-link="projects"><span aria-hidden="true">▤</span>Projects<span class="pu-nav-count">12</span></button>
+        <button type="button" data-page-link="deployments"><span aria-hidden="true">⇄</span>Deployments<span class="pu-status-dot pu-status-dot--good" aria-label="All systems operational"></span></button>
+        <button type="button" data-page-link="team"><span aria-hidden="true">♙</span>Team</button>
+        <span class="pu-nav-label">Manage</span>
+        <button type="button" data-page-link="settings"><span aria-hidden="true">⚙</span>Settings</button>
+        <button type="button"><span aria-hidden="true">?</span>Help center</button>
+      </nav>
+
+      <div class="pu-sidebar-spacer"></div>
+      <section class="pu-usage" aria-labelledby="usage-title">
+        <div><strong id="usage-title">Monthly usage</strong><span>72%</span></div>
+        <progress value="72" max="100">72%</progress>
+        <p>718k of 1m events processed</p>
+      </section>
+      <button class="pu-user" type="button">
+        <span class="pu-avatar">AM</span>
+        <span><strong>Alex Morgan</strong><small>alex@northwind.test</small></span>
+        <span aria-hidden="true">•••</span>
+      </button>
+    </aside>
+
+    <div class="pu-workspace-shell">
+      <header class="pu-topbar">
+        <button class="pu-icon-button pu-menu-button" type="button" data-sidebar-toggle aria-label="Open navigation">☰</button>
+        <div class="pu-breadcrumbs" aria-label="Breadcrumb"><span>Northwind Ops</span><b>/</b><strong data-current-page>Overview</strong></div>
+        <label class="pu-search">
+          <span aria-hidden="true">⌕</span>
+          <span class="pu-visually-hidden">Search workspace</span>
+          <input type="search" placeholder="Search workspace">
+          <kbd>⌘ K</kbd>
+        </label>
+        <div class="pu-top-actions">
+          <div class="pu-density" role="group" aria-label="Display density">
+            <button type="button" data-density-value="compact" aria-pressed="true">Compact</button>
+            <button type="button" data-density-value="comfortable" aria-pressed="false">Comfortable</button>
+          </div>
+          <button class="pu-icon-button" type="button" data-theme-toggle aria-pressed="false" aria-label="Use dark color scheme">◐</button>
+          <button class="pu-icon-button pu-notification" type="button" aria-label="Notifications"><span aria-hidden="true">♢</span><i></i></button>
+        </div>
+      </header>
+
+      <main class="pu-main">
+        <section class="pu-page" data-page="overview">
+          <header class="pu-page-header">
+            <div><span class="pu-eyebrow">Operations</span><h1>Workspace overview</h1><p>Monitor delivery, service health, and active work across your organization.</p></div>
+            <div class="pu-page-actions"><button class="sg-button sg-button--ghost" type="button">Export report</button><button class="sg-button sg-button--primary" type="button">＋ New project</button></div>
+          </header>
+
+          <section class="pu-kpi-grid" aria-label="Workspace metrics">
+            <article class="pu-kpi-card">
+              <div class="pu-kpi-heading"><span>Monthly revenue</span><span class="pu-change pu-change--up">↗ 8.2%</span></div>
+              <strong>$284,620</strong>
+              <svg viewBox="0 0 160 34" role="img" aria-label="Revenue increased over the last six periods"><path d="M2 29 C20 25, 28 28, 42 19 S65 15, 79 18 S100 8, 115 12 S139 4, 158 5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M2 29 C20 25, 28 28, 42 19 S65 15, 79 18 S100 8, 115 12 S139 4, 158 5 V34 H2 Z" fill="currentColor" opacity="0.08"/></svg>
+            </article>
+            <article class="pu-kpi-card">
+              <div class="pu-kpi-heading"><span>Active projects</span><span class="pu-change">12 total</span></div>
+              <strong>9</strong>
+              <div class="pu-mini-bars" aria-label="Nine active, two paused, one at risk"><i style="--size: 78%"></i><i style="--size: 60%"></i><i style="--size: 84%"></i><i style="--size: 68%"></i><i style="--size: 91%"></i><i style="--size: 76%"></i><i style="--size: 88%"></i><i style="--size: 64%"></i></div>
+            </article>
+            <article class="pu-kpi-card">
+              <div class="pu-kpi-heading"><span>Success rate</span><span class="pu-change pu-change--up">↗ 1.4%</span></div>
+              <strong>99.92%</strong>
+              <div class="pu-meter"><i style="width: 99.92%"></i></div><small>43,208 successful runs</small>
+            </article>
+            <article class="pu-kpi-card">
+              <div class="pu-kpi-heading"><span>Open incidents</span><span class="pu-change pu-change--down">2 require review</span></div>
+              <strong>4</strong>
+              <div class="pu-severity"><span><i class="pu-status-dot pu-status-dot--risk"></i>1 high</span><span><i class="pu-status-dot pu-status-dot--watch"></i>3 medium</span></div>
+            </article>
+          </section>
+
+          <div class="pu-overview-grid">
+            <section class="pu-panel pu-throughput-panel" aria-labelledby="throughput-title">
+              <header class="pu-panel-header"><div><h2 id="throughput-title">Delivery throughput</h2><p>Successful releases across production services</p></div><select class="pu-compact-select" aria-label="Throughput period"><option>Last 30 days</option><option>Last 90 days</option></select></header>
+              <div class="pu-chart-summary"><strong>1,842</strong><span>deployments</span><b>+12.4% vs previous period</b></div>
+              <div class="pu-chart" role="img" aria-label="Daily deployments trend upward across the last 30 days">
+                <div class="pu-chart-y"><span>80</span><span>60</span><span>40</span><span>20</span><span>0</span></div>
+                <svg viewBox="0 0 720 220" preserveAspectRatio="none" aria-hidden="true">
+                  <defs><linearGradient id="area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="currentColor" stop-opacity="0.22"/><stop offset="1" stop-color="currentColor" stop-opacity="0"/></linearGradient></defs>
+                  <path class="pu-chart-area" d="M0 183 L28 169 L56 176 L84 151 L112 160 L140 142 L168 147 L196 112 L224 126 L252 105 L280 114 L308 89 L336 96 L364 72 L392 84 L420 61 L448 70 L476 43 L504 58 L532 36 L560 49 L588 28 L616 39 L644 18 L672 29 L700 12 L720 19 V220 H0 Z"/>
+                  <path class="pu-chart-line" d="M0 183 L28 169 L56 176 L84 151 L112 160 L140 142 L168 147 L196 112 L224 126 L252 105 L280 114 L308 89 L336 96 L364 72 L392 84 L420 61 L448 70 L476 43 L504 58 L532 36 L560 49 L588 28 L616 39 L644 18 L672 29 L700 12 L720 19"/>
+                </svg>
+                <div class="pu-chart-x"><span>Jun 01</span><span>Jun 08</span><span>Jun 15</span><span>Jun 22</span><span>Jun 30</span></div>
+              </div>
+            </section>
+
+            <section class="pu-panel pu-health-panel" aria-labelledby="health-title">
+              <header class="pu-panel-header"><div><h2 id="health-title">System health</h2><p>Live service status</p></div><span class="pu-live"><i></i>Live</span></header>
+              <div class="pu-health-score"><div><strong>98</strong><span>/100</span></div><p>All core systems operational</p></div>
+              <ul class="pu-service-list">
+                <li><span class="pu-service-icon">AP</span><div><strong>Public API</strong><small>99.99% uptime</small></div><span class="pu-status-text pu-status-text--good">Operational</span></li>
+                <li><span class="pu-service-icon">DB</span><div><strong>Data pipeline</strong><small>99.94% uptime</small></div><span class="pu-status-text pu-status-text--good">Operational</span></li>
+                <li><span class="pu-service-icon">WK</span><div><strong>Job workers</strong><small>2 delayed jobs</small></div><span class="pu-status-text pu-status-text--watch">Degraded</span></li>
+                <li><span class="pu-service-icon">CD</span><div><strong>Content delivery</strong><small>Global edge network</small></div><span class="pu-status-text pu-status-text--good">Operational</span></li>
+              </ul>
+              <button class="pu-panel-link" type="button">View status history <span aria-hidden="true">→</span></button>
+            </section>
+
+            <section class="pu-panel pu-project-panel" aria-labelledby="active-projects-title">
+              <header class="pu-panel-header"><div><h2 id="active-projects-title">Active projects</h2><p>Work with upcoming milestones</p></div><button class="pu-text-button" type="button" data-go-projects>View all</button></header>
+              <div class="pu-project-table" role="table" aria-label="Active projects">
+                <div class="pu-project-table-head" role="row"><span role="columnheader">Project</span><span role="columnheader">Owner</span><span role="columnheader">Progress</span><span role="columnheader">Due</span><span role="columnheader">Status</span></div>
+                <div class="pu-project-row" role="row"><div role="cell"><span class="pu-project-mark pu-project-mark--blue">OF</span><span><strong>Order flow redesign</strong><small>Commerce platform</small></span></div><span role="cell"><span class="pu-small-avatar">JL</span>Jamie Lee</span><span role="cell"><i class="pu-progress"><b style="width: 72%"></b></i>72%</span><span role="cell">Jul 24</span><span role="cell" class="pu-badge pu-badge--good">On track</span></div>
+                <div class="pu-project-row" role="row"><div role="cell"><span class="pu-project-mark pu-project-mark--cyan">AN</span><span><strong>Analytics next</strong><small>Insights suite</small></span></div><span role="cell"><span class="pu-small-avatar">RK</span>Riley Kim</span><span role="cell"><i class="pu-progress"><b style="width: 48%"></b></i>48%</span><span role="cell">Aug 05</span><span role="cell" class="pu-badge pu-badge--watch">Review</span></div>
+                <div class="pu-project-row" role="row"><div role="cell"><span class="pu-project-mark pu-project-mark--violet">ID</span><span><strong>Identity controls</strong><small>Admin platform</small></span></div><span role="cell"><span class="pu-small-avatar">SP</span>Sam Patel</span><span role="cell"><i class="pu-progress"><b style="width: 86%"></b></i>86%</span><span role="cell">Jul 19</span><span role="cell" class="pu-badge pu-badge--risk">At risk</span></div>
+              </div>
+            </section>
+
+            <section class="pu-panel pu-activity-panel" aria-labelledby="activity-title">
+              <header class="pu-panel-header"><div><h2 id="activity-title">Recent activity</h2><p>Latest workspace changes</p></div><button class="pu-icon-button" type="button" aria-label="More activity options">•••</button></header>
+              <ol class="pu-activity-list">
+                <li><span class="pu-activity-icon">↗</span><div><p><strong>Jamie Lee</strong> deployed Order API <code>v2.14.0</code></p><time>12 minutes ago</time></div></li>
+                <li><span class="pu-activity-icon">✓</span><div><p><strong>Riley Kim</strong> completed Analytics QA</p><time>48 minutes ago</time></div></li>
+                <li><span class="pu-activity-icon">＋</span><div><p><strong>Sam Patel</strong> added 4 members to Admin Platform</p><time>2 hours ago</time></div></li>
+                <li><span class="pu-activity-icon">⚠</span><div><p>Latency alert opened for Job workers</p><time>3 hours ago</time></div></li>
+              </ol>
+            </section>
+          </div>
+        </section>
+
+        <section class="pu-page" data-page="projects" hidden>
+          <header class="pu-page-header">
+            <div><span class="pu-eyebrow">Workspace</span><h1>Projects</h1><p>Track delivery, ownership, milestones, and operational health.</p></div>
+            <button class="sg-button sg-button--primary" type="button">＋ Create project</button>
+          </header>
+          <div class="pu-filterbar">
+            <label class="pu-filter-search"><span class="pu-visually-hidden">Search projects</span><span aria-hidden="true">⌕</span><input class="sg-input" type="search" placeholder="Search projects" data-project-search></label>
+            <select class="sg-input" data-project-status aria-label="Filter projects by status"><option value="all">All statuses</option><option value="on-track">On track</option><option value="review">Review</option><option value="at-risk">At risk</option></select>
+            <select class="sg-input" aria-label="Filter projects by owner"><option>All owners</option><option>Jamie Lee</option><option>Riley Kim</option><option>Sam Patel</option></select>
+            <button class="sg-button sg-button--ghost" type="button">⇅ Sort</button>
+            <div class="pu-view-switch" role="group" aria-label="Project view"><button type="button" aria-pressed="true">☷</button><button type="button" aria-pressed="false">▦</button></div>
+          </div>
+          <section class="pu-panel pu-projects-list" aria-label="Projects">
+            <div class="pu-list-heading"><span>Project</span><span>Owner</span><span>Last deployment</span><span>Progress</span><span>Due date</span><span>Status</span><span></span></div>
+            <article data-project-row data-project-status-value="on-track"><div><span class="pu-project-mark pu-project-mark--blue">OF</span><span><strong>Order flow redesign</strong><small>PRJ-1042 · Commerce platform</small></span></div><span><span class="pu-small-avatar">JL</span>Jamie Lee</span><span><strong>v2.14.0</strong><small>12 minutes ago</small></span><span><i class="pu-progress"><b style="width: 72%"></b></i>72%</span><span><strong>Jul 24</strong><small>9 days</small></span><span class="pu-badge pu-badge--good">On track</span><button class="pu-icon-button" aria-label="Order flow redesign actions">•••</button></article>
+            <article data-project-row data-project-status-value="review"><div><span class="pu-project-mark pu-project-mark--cyan">AN</span><span><strong>Analytics next</strong><small>PRJ-1048 · Insights suite</small></span></div><span><span class="pu-small-avatar">RK</span>Riley Kim</span><span><strong>v0.9.8</strong><small>Yesterday</small></span><span><i class="pu-progress"><b style="width: 48%"></b></i>48%</span><span><strong>Aug 05</strong><small>21 days</small></span><span class="pu-badge pu-badge--watch">Review</span><button class="pu-icon-button" aria-label="Analytics next actions">•••</button></article>
+            <article data-project-row data-project-status-value="at-risk"><div><span class="pu-project-mark pu-project-mark--violet">ID</span><span><strong>Identity controls</strong><small>PRJ-1051 · Admin platform</small></span></div><span><span class="pu-small-avatar">SP</span>Sam Patel</span><span><strong>v3.6.2</strong><small>3 days ago</small></span><span><i class="pu-progress"><b style="width: 86%"></b></i>86%</span><span><strong>Jul 19</strong><small>4 days</small></span><span class="pu-badge pu-badge--risk">At risk</span><button class="pu-icon-button" aria-label="Identity controls actions">•••</button></article>
+            <article data-project-row data-project-status-value="on-track"><div><span class="pu-project-mark pu-project-mark--amber">MM</span><span><strong>Merchant mobile</strong><small>PRJ-1057 · Mobile experience</small></span></div><span><span class="pu-small-avatar">NB</span>Noah Brooks</span><span><strong>v1.18.1</strong><small>4 days ago</small></span><span><i class="pu-progress"><b style="width: 64%"></b></i>64%</span><span><strong>Aug 12</strong><small>28 days</small></span><span class="pu-badge pu-badge--good">On track</span><button class="pu-icon-button" aria-label="Merchant mobile actions">•••</button></article>
+            <article data-project-row data-project-status-value="review"><div><span class="pu-project-mark pu-project-mark--green">DP</span><span><strong>Data platform</strong><small>PRJ-1063 · Infrastructure</small></span></div><span><span class="pu-small-avatar">MC</span>Morgan Chen</span><span><strong>v4.2.0-rc</strong><small>6 days ago</small></span><span><i class="pu-progress"><b style="width: 55%"></b></i>55%</span><span><strong>Aug 30</strong><small>46 days</small></span><span class="pu-badge pu-badge--watch">Review</span><button class="pu-icon-button" aria-label="Data platform actions">•••</button></article>
+            <div class="pu-empty-filter" data-project-empty hidden><strong>No matching projects</strong><p>Adjust the search or status filter.</p></div>
+          </section>
+          <footer class="pu-list-footer"><span data-project-count>5 projects</span><div><button type="button" disabled>Previous</button><strong>1</strong><button type="button">Next</button></div></footer>
+        </section>
+
+        <section class="pu-page" data-page="settings" hidden>
+          <header class="pu-page-header">
+            <div><span class="pu-eyebrow">Administration</span><h1>Workspace settings</h1><p>Manage identity, notifications, data retention, and integrations.</p></div>
+            <div class="pu-page-actions"><button class="sg-button sg-button--ghost" type="button">Discard</button><button class="sg-button sg-button--primary" type="button" data-save-settings>Save changes</button></div>
+          </header>
+          <div class="pu-settings-layout">
+            <nav class="pu-settings-nav" aria-label="Settings sections">
+              <a href="#general" aria-current="location">General</a>
+              <a href="#notifications">Notifications</a>
+              <a href="#security">Security</a>
+              <a href="#integrations">Integrations</a>
+              <a href="#danger">Advanced</a>
+            </nav>
+            <form class="pu-settings-form">
+              <section id="general" class="pu-settings-section" aria-labelledby="general-title">
+                <header><h2 id="general-title">General</h2><p>Workspace identity and regional defaults.</p></header>
+                <div class="pu-form-grid">
+                  <label class="pu-field-wide"><span>Workspace name</span><input class="sg-input" value="Northwind Operations"><small>Displayed in navigation, reports, and invitations.</small></label>
+                  <label><span>Workspace slug</span><div class="pu-input-prefix"><span>arcframe.dev/</span><input class="sg-input" value="northwind-ops"></div></label>
+                  <label><span>Default region</span><select class="sg-input"><option>US West (Oregon)</option><option>US East (Virginia)</option><option>EU West (Ireland)</option></select></label>
+                  <label><span>Time zone</span><select class="sg-input"><option>Pacific Time (UTC−08:00)</option><option>Eastern Time (UTC−05:00)</option><option>Central European Time (UTC+01:00)</option></select></label>
+                  <label><span>Week starts on</span><select class="sg-input"><option>Monday</option><option>Sunday</option></select></label>
+                </div>
+              </section>
+              <section id="notifications" class="pu-settings-section" aria-labelledby="notifications-title">
+                <header><h2 id="notifications-title">Notifications</h2><p>Choose which operational events reach your team.</p></header>
+                <div class="pu-toggle-list">
+                  <label><input type="checkbox" checked><span><strong>Deployment failures</strong><small>Notify workspace administrators immediately.</small></span></label>
+                  <label><input type="checkbox" checked><span><strong>Weekly operations summary</strong><small>Send key delivery and reliability metrics every Monday.</small></span></label>
+                  <label><input type="checkbox"><span><strong>Project milestone reminders</strong><small>Notify owners three days before each milestone.</small></span></label>
+                </div>
+              </section>
+              <section id="security" class="pu-settings-section" aria-labelledby="security-title">
+                <header><h2 id="security-title">Security</h2><p>Session and access requirements for all members.</p></header>
+                <div class="pu-form-grid">
+                  <label><span>Session duration</span><select class="sg-input"><option>12 hours</option><option>8 hours</option><option>24 hours</option></select></label>
+                  <label><span>Member authentication</span><select class="sg-input"><option>Password or SSO</option><option>SSO required</option></select></label>
+                  <label class="pu-field-wide pu-validation-field"><span>Allowed email domain</span><input class="sg-input" value="northwind.test" aria-describedby="domain-help"><small id="domain-help">New members must use this verified domain.</small></label>
+                </div>
+              </section>
+            </form>
+          </div>
+        </section>
+
+        <section class="pu-page pu-placeholder-page" data-page="deployments" hidden><div class="pu-placeholder-icon">⇄</div><h1>Deployments</h1><p>This navigation target demonstrates the application shell. The detailed page is outside this style sample.</p><button class="sg-button sg-button--primary" type="button" data-go-overview>Return to overview</button></section>
+        <section class="pu-page pu-placeholder-page" data-page="team" hidden><div class="pu-placeholder-icon">♙</div><h1>Team</h1><p>This navigation target demonstrates the application shell. The detailed page is outside this style sample.</p><button class="sg-button sg-button--primary" type="button" data-go-overview>Return to overview</button></section>
+      </main>
+    </div>
+    <div class="pu-toast" role="status" aria-live="polite" data-toast hidden><span aria-hidden="true">✓</span>Workspace settings saved</div>
+  </div>
+</body>
+</html>

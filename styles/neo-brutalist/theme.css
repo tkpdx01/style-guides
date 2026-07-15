@@ -19,6 +19,20 @@
 
     --sg-font-sans: "Nunito", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     --sg-font-mono: "Space Mono", ui-monospace, SFMono-Regular, Consolas, monospace;
+    --sg-font-size-base: 1rem;
+    --sg-font-size-control: 1rem;
+    --sg-font-size-badge: 0.875rem;
+    --sg-font-weight-control: 700;
+    --sg-font-weight-badge: 700;
+    --sg-line-height-base: 1.5;
+    --sg-control-min-height: 2.75rem;
+    --sg-control-gap: 0.5rem;
+    --sg-control-padding-block: 0.7rem;
+    --sg-control-padding-inline: 1.15rem;
+    --sg-input-padding-block: 0.7rem;
+    --sg-input-padding-inline: 0.9rem;
+    --sg-badge-padding-block: 0.3rem;
+    --sg-badge-padding-inline: 0.7rem;
 
     --sg-border-width: 2px;
     --sg-focus-width: 3px;

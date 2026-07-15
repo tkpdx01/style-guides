@@ -2,7 +2,7 @@
 
 > One sentence describing the visual identity and intended experience.
 
-Preview: replace `assets/README.md` with a representative `assets/preview.png`, then add the image here before review.
+Preview: replace `assets/README.md` with a representative preview file, then add the image here before review. Add a local Demo and `files.demo` manifest entry when the style depends on interaction or density behavior.
 
 ## Choose this style when
 

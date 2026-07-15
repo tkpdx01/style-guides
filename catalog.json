@@ -60,6 +60,135 @@
         }
       ],
       "path": "./styles/neo-brutalist"
+    },
+    {
+      "id": "precision-grid",
+      "name": "Precision Grid",
+      "version": "1.0.0",
+      "status": "ready",
+      "summary": "Compact, grid-led workspaces with restrained color, narrow data type, and desktop-first information density.",
+      "description": "A professional productivity system for analysis, operations, and data entry. Small type, one-pixel structure, explicit density modes, and spreadsheet-like navigation maximize useful information without copying Microsoft branding.",
+      "preview": "./styles/precision-grid/assets/preview.png",
+      "files": {
+        "guide": "./styles/precision-grid/README.md",
+        "prompt": "./styles/precision-grid/PROMPT.md",
+        "theme": "./styles/precision-grid/theme.css",
+        "demo": "./styles/precision-grid/demo/index.html"
+      },
+      "tags": [
+        "compact",
+        "data-dense",
+        "enterprise",
+        "productivity",
+        "professional",
+        "spreadsheet"
+      ],
+      "traits": {
+        "density": "compact",
+        "contrast": "medium",
+        "energy": "quiet",
+        "shape": "sharp",
+        "motion": "minimal"
+      },
+      "bestFor": [
+        "Data analysis and reporting",
+        "Operations and administrative tools",
+        "Financial and inventory workflows",
+        "Keyboard-first data entry"
+      ],
+      "avoidFor": [
+        "Touch-first consumer applications",
+        "Brand-led marketing pages",
+        "Long-form editorial reading",
+        "Interfaces for users who require large default targets"
+      ],
+      "compatibleWith": [
+        "Plain CSS",
+        "React",
+        "Next.js",
+        "Vue",
+        "Tailwind CSS"
+      ],
+      "fonts": [
+        {
+          "role": "sans",
+          "family": "Segoe UI Variable",
+          "fallback": "Segoe UI, Inter, system-ui, sans-serif"
+        },
+        {
+          "role": "data",
+          "family": "Aptos Narrow",
+          "fallback": "Arial Narrow, Segoe UI, sans-serif"
+        },
+        {
+          "role": "mono",
+          "family": "Cascadia Mono",
+          "fallback": "Consolas, ui-monospace, monospace"
+        }
+      ],
+      "path": "./styles/precision-grid"
+    },
+    {
+      "id": "precision-ui",
+      "name": "Precision UI",
+      "version": "1.0.0",
+      "status": "ready",
+      "summary": "Compact application pages with crisp type, one-pixel structure, sharp geometry, and restrained cobalt accents.",
+      "description": "A professional interface system for SaaS, enterprise portals, developer tools, and operational products. It applies Precision Grid's typography and density discipline to general navigation, dashboards, lists, forms, and settings without spreadsheet chrome.",
+      "preview": "./styles/precision-ui/assets/preview.png",
+      "files": {
+        "guide": "./styles/precision-ui/README.md",
+        "prompt": "./styles/precision-ui/PROMPT.md",
+        "theme": "./styles/precision-ui/theme.css",
+        "demo": "./styles/precision-ui/demo/index.html"
+      },
+      "tags": [
+        "app-shell",
+        "compact",
+        "enterprise",
+        "professional",
+        "sharp",
+        "structured"
+      ],
+      "traits": {
+        "density": "compact",
+        "contrast": "medium",
+        "energy": "quiet",
+        "shape": "sharp",
+        "motion": "minimal"
+      },
+      "bestFor": [
+        "SaaS application interfaces",
+        "Enterprise portals and internal tools",
+        "Developer and infrastructure products",
+        "Operational dashboards and settings"
+      ],
+      "avoidFor": [
+        "Brand-led marketing experiences",
+        "Touch-first consumer applications",
+        "Long-form editorial reading",
+        "Playful products that depend on expressive illustration"
+      ],
+      "compatibleWith": [
+        "Plain CSS",
+        "React",
+        "Next.js",
+        "Vue",
+        "Tailwind CSS"
+      ],
+      "fonts": [
+        {
+          "role": "sans",
+          "family": "Segoe UI Variable",
+          "fallback": "Segoe UI, Inter, system-ui, sans-serif"
+        },
+        {
+          "role": "mono",
+          "family": "Cascadia Mono",
+          "fallback": "Consolas, ui-monospace, monospace"
+        }
+      ],
+      "path": "./styles/precision-ui"
     }
   ]
 }

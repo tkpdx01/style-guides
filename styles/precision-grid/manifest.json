@@ -1,0 +1,67 @@
+{
+  "$schema": "../../schemas/style-manifest.schema.json",
+  "id": "precision-grid",
+  "name": "Precision Grid",
+  "version": "1.0.0",
+  "status": "ready",
+  "summary": "Compact, grid-led workspaces with restrained color, narrow data type, and desktop-first information density.",
+  "description": "A professional productivity system for analysis, operations, and data entry. Small type, one-pixel structure, explicit density modes, and spreadsheet-like navigation maximize useful information without copying Microsoft branding.",
+  "preview": "./assets/preview.png",
+  "files": {
+    "guide": "./README.md",
+    "prompt": "./PROMPT.md",
+    "theme": "./theme.css",
+    "demo": "./demo/index.html"
+  },
+  "tags": [
+    "compact",
+    "data-dense",
+    "enterprise",
+    "productivity",
+    "professional",
+    "spreadsheet"
+  ],
+  "traits": {
+    "density": "compact",
+    "contrast": "medium",
+    "energy": "quiet",
+    "shape": "sharp",
+    "motion": "minimal"
+  },
+  "bestFor": [
+    "Data analysis and reporting",
+    "Operations and administrative tools",
+    "Financial and inventory workflows",
+    "Keyboard-first data entry"
+  ],
+  "avoidFor": [
+    "Touch-first consumer applications",
+    "Brand-led marketing pages",
+    "Long-form editorial reading",
+    "Interfaces for users who require large default targets"
+  ],
+  "compatibleWith": [
+    "Plain CSS",
+    "React",
+    "Next.js",
+    "Vue",
+    "Tailwind CSS"
+  ],
+  "fonts": [
+    {
+      "role": "sans",
+      "family": "Segoe UI Variable",
+      "fallback": "Segoe UI, Inter, system-ui, sans-serif"
+    },
+    {
+      "role": "data",
+      "family": "Aptos Narrow",
+      "fallback": "Arial Narrow, Segoe UI, sans-serif"
+    },
+    {
+      "role": "mono",
+      "family": "Cascadia Mono",
+      "fallback": "Consolas, ui-monospace, monospace"
+    }
+  ]
+}

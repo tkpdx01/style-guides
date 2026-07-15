@@ -6,7 +6,7 @@ import { fileURLToPath } from "node:url"
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..")
 const ignoredDirectories = new Set([".git", "node_modules"])
 
-async function collectMarkdownFiles(directory) {
+async function collectDocumentFiles(directory) {
   const files = []
 
   for (const entry of await readdir(directory, { withFileTypes: true })) {
@@ -15,8 +15,8 @@ async function collectMarkdownFiles(directory) {
     const entryPath = path.join(directory, entry.name)
 
     if (entry.isDirectory()) {
-      files.push(...await collectMarkdownFiles(entryPath))
-    } else if (entry.isFile() && entry.name.toLowerCase().endsWith(".md")) {
+      files.push(...await collectDocumentFiles(entryPath))
+    } else if (entry.isFile() && [".md", ".html"].includes(path.extname(entry.name).toLowerCase())) {
       files.push(entryPath)
     }
   }
@@ -24,23 +24,23 @@ async function collectMarkdownFiles(directory) {
   return files
 }
 
-function extractTargets(markdown) {
+function extractTargets(document) {
   const targets = new Set()
   const markdownLink = /!?\[[^\]]*\]\((?:<([^>]+)>|([^\s)]+))(?:\s+["'][^"']*["'])?\)/g
-  const htmlLink = /<(?:a|img)\b[^>]*?\b(?:href|src)=["']([^"']+)["'][^>]*>/gi
+  const htmlLink = /<(?:a|img|link|script)\b[^>]*?\b(?:href|src)=["']([^"']+)["'][^>]*>/gi
 
-  for (const match of markdown.matchAll(markdownLink)) {
+  for (const match of document.matchAll(markdownLink)) {
     targets.add(match[1] ?? match[2])
   }
 
-  for (const match of markdown.matchAll(htmlLink)) {
+  for (const match of document.matchAll(htmlLink)) {
     targets.add(match[1])
   }
 
   return [...targets]
 }
 
-function resolveLocalTarget(markdownPath, rawTarget) {
+function resolveLocalTarget(documentPath, rawTarget) {
   const target = rawTarget.trim()
 
   if (
@@ -57,27 +57,27 @@ function resolveLocalTarget(markdownPath, rawTarget) {
   if (pathOnly === "") return null
 
   try {
-    return path.resolve(path.dirname(markdownPath), decodeURIComponent(pathOnly))
+    return path.resolve(path.dirname(documentPath), decodeURIComponent(pathOnly))
   } catch {
-    return path.resolve(path.dirname(markdownPath), pathOnly)
+    return path.resolve(path.dirname(documentPath), pathOnly)
   }
 }
 
-const markdownFiles = await collectMarkdownFiles(rootDir)
+const documentFiles = await collectDocumentFiles(rootDir)
 const brokenLinks = []
 
-for (const markdownPath of markdownFiles) {
-  const markdown = await readFile(markdownPath, "utf8")
+for (const documentPath of documentFiles) {
+  const document = await readFile(documentPath, "utf8")
 
-  for (const target of extractTargets(markdown)) {
-    const resolvedTarget = resolveLocalTarget(markdownPath, target)
+  for (const target of extractTargets(document)) {
+    const resolvedTarget = resolveLocalTarget(documentPath, target)
     if (!resolvedTarget) continue
 
     try {
       await access(resolvedTarget)
     } catch {
       brokenLinks.push({
-        file: path.relative(rootDir, markdownPath).replaceAll(path.sep, "/"),
+        file: path.relative(rootDir, documentPath).replaceAll(path.sep, "/"),
         target,
       })
     }
@@ -90,5 +90,5 @@ if (brokenLinks.length > 0) {
   }
   process.exitCode = 1
 } else {
-  console.log(`Local Markdown links are valid (${markdownFiles.length} files).`)
+  console.log(`Local document links are valid (${documentFiles.length} files).`)
 }

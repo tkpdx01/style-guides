@@ -40,6 +40,8 @@ The core uses namespaced `.sg-*` classes and `--sg-*` tokens, so it can coexist 
 | Preview | Style | Traits | Best for |
 |---|---|---|---|
 | <a href="./styles/neo-brutalist/README.md"><img src="./styles/neo-brutalist/assets/preview.png" width="260" alt="Neo-Brutalist preview"></a> | **[Neo-Brutalist](./styles/neo-brutalist/README.md)**<br>Warm, playful interfaces with bold borders, solid shadows, and tactile motion.<br>`warm` `playful` `high-contrast` `hard-shadows` `bold-borders` `handcrafted` | density: `relaxed`<br>contrast: `high`<br>energy: `bold`<br>shape: `rounded`<br>motion: `expressive` | SaaS landing pages<br>Developer tools<br>Creative portfolios<br>Friendly consumer products |
+| <a href="./styles/precision-grid/README.md"><img src="./styles/precision-grid/assets/preview.png" width="260" alt="Precision Grid preview"></a> | **[Precision Grid](./styles/precision-grid/README.md)**<br>Compact, grid-led workspaces with restrained color, narrow data type, and desktop-first information density.<br>[Open demo](./styles/precision-grid/demo/index.html)<br>`compact` `data-dense` `enterprise` `productivity` `professional` `spreadsheet` | density: `compact`<br>contrast: `medium`<br>energy: `quiet`<br>shape: `sharp`<br>motion: `minimal` | Data analysis and reporting<br>Operations and administrative tools<br>Financial and inventory workflows<br>Keyboard-first data entry |
+| <a href="./styles/precision-ui/README.md"><img src="./styles/precision-ui/assets/preview.png" width="260" alt="Precision UI preview"></a> | **[Precision UI](./styles/precision-ui/README.md)**<br>Compact application pages with crisp type, one-pixel structure, sharp geometry, and restrained cobalt accents.<br>[Open demo](./styles/precision-ui/demo/index.html)<br>`app-shell` `compact` `enterprise` `professional` `sharp` `structured` | density: `compact`<br>contrast: `medium`<br>energy: `quiet`<br>shape: `sharp`<br>motion: `minimal` | SaaS application interfaces<br>Enterprise portals and internal tools<br>Developer and infrastructure products<br>Operational dashboards and settings |
 <!-- catalog:end -->
 
 ## Repository structure
@@ -53,7 +55,8 @@ style-guides/
 │   ├── README.md                # Human design and implementation guide
 │   ├── PROMPT.md                # Portable AI implementation brief
 │   ├── theme.css                # Runtime theme implementation
-│   └── assets/preview.png       # Evidence of the visual direction
+│   ├── demo/index.html          # Optional executable evidence
+│   └── assets/preview.*         # Static evidence of the visual direction
 ├── templates/style/             # Copyable scaffold for a new style
 ├── schemas/                     # Manifest and catalog contracts
 ├── scripts/catalog.mjs          # Validation and catalog generation
@@ -75,7 +78,7 @@ style-guides/
 npm run catalog:build  # validate manifests and regenerate catalogs
 npm run catalog:check  # fail when manifests or generated files drift
 npm run themes:check   # verify every theme implements the core token contract
-npm run links:check    # verify local links in Markdown files
+npm run links:check    # verify local links in Markdown and HTML files
 npm run check          # run all repository validation
 ```
 

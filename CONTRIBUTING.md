@@ -5,10 +5,11 @@
 1. Copy `templates/style/` to `styles/<style-id>/`.
 2. Use a stable, lowercase kebab-case id.
 3. Replace every placeholder in `manifest.json`, `README.md`, `PROMPT.md`, and `theme.css`.
-4. Add a representative `assets/preview.png` that you are allowed to store and redistribute.
-5. Keep the style in `draft` until its guide, prompt, theme, responsive behavior, and accessibility states have been reviewed.
-6. Run `npm run catalog:build`.
-7. Run `npm run check` and review the generated root catalog and `catalog.json`.
+4. Add a representative `assets/preview.png`, `assets/preview.webp`, or original `assets/preview.svg` that you are allowed to store and redistribute.
+5. Add an executable Demo when interaction, density, or responsive behavior cannot be judged from a static preview. Expose it as the optional `files.demo` manifest entry.
+6. Keep the style in `draft` until its guide, prompt, theme, responsive behavior, and accessibility states have been reviewed.
+7. Run `npm run catalog:build`.
+8. Run `npm run check` and review the generated root catalog and `catalog.json`.
 
 Never edit the generated catalog section or `catalog.json` by hand.
 
@@ -21,6 +22,7 @@ A style may use `status: "ready"` only when it has:
 - all required semantic tokens in `theme.css`;
 - visible keyboard focus, disabled states, and reduced-motion behavior through the core contract;
 - a real preview that matches the written rules;
+- any manifest-listed Demo opens locally and demonstrates the states claimed by the guide;
 - human guidance that covers composition and accessibility, not only colors;
 - an AI prompt that tells an agent to preserve the host application's architecture;
 - successful `npm run check` validation.
@@ -36,6 +38,7 @@ The schema is `schemas/style-manifest.schema.json`.
 - `bestFor` and `avoidFor` describe product contexts, not implementation frameworks.
 - `compatibleWith` lists verified integration targets.
 - File paths remain relative to the style directory and must not escape it.
+- `files.demo` is optional, but when present it must point to a self-contained local entry file that works without a build step.
 
 ## Writing guides
 
@@ -75,7 +78,7 @@ Changes to `src/core.css` affect every style. Before adding or renaming a public
 
 ## Asset guidance
 
-- Prefer PNG or WebP for rendered previews and SVG for original diagrams or icons.
+- Prefer PNG or WebP for rendered previews and SVG for original diagrams, interface mockups, or icons.
 - Crop browser chrome unless it helps explain the source context.
 - Remove private tabs, account details, tokens, and unrelated personal information.
 - Record attribution or license notes in the style guide when required.
